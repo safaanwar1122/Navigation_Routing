@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:navigation_routing/screen_three.dart';
+import 'package:navigation_routing/utils_directory/routes_name.dart';
+
 class ScreenTwo extends StatefulWidget {
-  const ScreenTwo({Key? key}) : super(key: key);
+  // final String name;
+  // final int num;
+
+ // static const String id='Screen_two';
+dynamic data;
+
+   ScreenTwo({Key? key, required this.data })
+      : super(key: key);
 
   @override
   State<ScreenTwo> createState() => _ScreenTwoState();
@@ -10,9 +19,11 @@ class ScreenTwo extends StatefulWidget {
 class _ScreenTwoState extends State<ScreenTwo> {
   @override
   Widget build(BuildContext context) {
+    //final arguments=ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Screen 2'),
+        title: Text(widget.data['flutter']),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -21,9 +32,8 @@ class _ScreenTwoState extends State<ScreenTwo> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>ScreenThree()));
-
+              onTap: () {
+               Navigator.pushNamed(context, RouteName.screenThree);
               },
               child: Container(
                 height: 50,

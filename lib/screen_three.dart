@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 class ScreenThree extends StatefulWidget {
-  const ScreenThree({Key? key}) : super(key: key);
+ // final String name;
+ // final int num;
+// static const String id='Screen_three';
+
+ const ScreenThree({Key? key, }) : super(key: key);
 
   @override
   State<ScreenThree> createState() => _ScreenThreeState();
@@ -11,7 +15,8 @@ class _ScreenThreeState extends State<ScreenThree> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Screen 3'),
+        title: Text('toptal'),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -21,6 +26,7 @@ class _ScreenThreeState extends State<ScreenThree> {
           children: [
             InkWell(
               onTap: (){
+                Navigator.pop(context);
 
               },
               child: Container(
